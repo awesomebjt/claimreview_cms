@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @item_reviewed.ir_type %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @item_reviewed.author.name %>
+</p>
+
+<p>
+  <strong>URL</strong>
+  <%= @item_reviewed.url %>
+</p>
+
+<p>
+  <strong>Datepublished:</strong>
+  <%= @item_reviewed.datepublished %>
+</p>
+
+<%= link_to 'Edit', edit_item_reviewed_path(@item_reviewed) %> |
+<%= link_to 'Back', item_revieweds_path %> |
+<%= link_to 'Create ClaimReview', '/claim_reviews/new' %>

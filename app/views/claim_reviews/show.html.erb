@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Datepublished:</strong>
+  <%= @claim_review.datePublished %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @claim_review.url %>
+</p>
+
+<p>
+  <strong>Item reviewed:</strong>
+  <%= @claim_review.item_reviewed.url %>
+</p>
+
+<p>
+  <strong>Claim Reviewed:</strong>
+  <%= @claim_review.claimReviewed %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @claim_review.author.name %>
+</p>
+
+<p>
+  <strong>Review rating:</strong>
+  <%= @claim_review.review_rating_id %>
+</p>
+
+<%= link_to 'Edit', edit_claim_review_path(@claim_review) %> |
+<%= link_to 'Back', claim_reviews_path %>

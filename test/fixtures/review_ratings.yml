@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  ratingValue: MyString
+  bestRating: MyString
+  worstRating: MyString
+  alternateName: MyString
+
+two:
+  type: 
+  ratingValue: MyString
+  bestRating: MyString
+  worstRating: MyString
+  alternateName: MyString

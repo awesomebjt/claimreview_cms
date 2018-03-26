@@ -1,0 +1,31 @@
+{
+  "@context": "http://schema.org",
+  "@type": "ClaimReview",
+  "datePublished": "<%= @claim_review.datePublished %>",
+  "url": "<%= @claim_review.url %>",
+  "itemReviewed":
+  {
+    "@type": "<%= @claim_review.item_reviewed.ir_type %>",
+    "author":
+    {
+      "@type": "<%= @claim_review.item_reviewed.author.author_type %>",
+      "name": "<%= @claim_review.item_reviewed.author.name %>",
+      "sameAs": "<%= @claim_review.item_reviewed.url %>"
+    },
+    "datePublished": "<%= @claim_review.item_reviewed.datepublished %>"
+  },
+  "claimReviewed": "<%= @claim_review.claimReviewed %>",
+  "author":
+  {
+    "@type": "<%= @claim_review.author.author_type %>",
+    "name": "<%= @claim_review.author.name %>"
+  },
+  "reviewRating":
+  {
+    "@type": "<%= @claim_review.review_rating.rr_type %>",
+    "ratingValue": "<%= @claim_review.review_rating.ratingValue %>",
+    "bestRating": "<%= @claim_review.review_rating.bestRating %>",
+    "worstRating": "<%= @claim_review.review_rating.worstRating %>",
+    "alternateName": "<%= @claim_review.review_rating.alternateName %>"
+  }
+}

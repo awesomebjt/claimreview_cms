@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Review Ratings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Ratingvalue</th>
+      <th>Bestrating</th>
+      <th>Worstrating</th>
+      <th>Alternatename</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @review_ratings.each do |review_rating| %>
+      <tr>
+        <td><%= review_rating.rr_type %></td>
+        <td><%= review_rating.ratingValue %></td>
+        <td><%= review_rating.bestRating %></td>
+        <td><%= review_rating.worstRating %></td>
+        <td><%= review_rating.alternateName %></td>
+        <td><%= link_to 'Show', review_rating %></td>
+        <td><%= link_to 'Edit', edit_review_rating_path(review_rating) %></td>
+        <td><%= link_to 'Destroy', review_rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Review Rating', new_review_rating_path %> | 
+<%= link_to 'New Claim Review', new_claim_review_path %>

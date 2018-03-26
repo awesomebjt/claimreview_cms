@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Claim Reviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Datepublished</th>
+      <th>Url</th>
+      <th>Item reviewed</th>
+      <th>Claimreviewed</th>
+      <th>Claim Author</th>
+      <th>Review rating</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @claim_reviews.each do |claim_review| %>
+      <tr>
+        <td><%= claim_review.datePublished %></td>
+        <td><%= claim_review.url %></td>
+        <td><%= claim_review.item_reviewed_id %></td>
+        <td><%= claim_review.claimReviewed %></td>
+        <td><%= claim_review.author.name %></td>
+        <td><%= claim_review.review_rating_id %></td>
+        <td><%= link_to 'Show', claim_review %></td>
+        <td><%= link_to 'Edit', edit_claim_review_path(claim_review) %></td>
+        <td><%= link_to 'Destroy', claim_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Claim Review', new_claim_review_path %>

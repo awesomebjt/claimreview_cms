@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Item Revieweds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Author</th>
+      <th>URL</th>
+      <th>Datepublished</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @item_revieweds.each do |item_reviewed| %>
+      <tr>
+        <td><%= item_reviewed.ir_type %></td>
+        <td><%= item_reviewed.author_id %></td>
+        <td><%= item_reviewed.url %></td>
+        <td><%= item_reviewed.datepublished %></td>
+        <td><%= link_to 'Show', item_reviewed %></td>
+        <td><%= link_to 'Edit', edit_item_reviewed_path(item_reviewed) %></td>
+        <td><%= link_to 'Destroy', item_reviewed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item Reviewed', new_item_reviewed_path %>

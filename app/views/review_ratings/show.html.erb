@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @review_rating.rr_type %>
+</p>
+
+<p>
+  <strong>Ratingvalue:</strong>
+  <%= @review_rating.ratingValue %>
+</p>
+
+<p>
+  <strong>Bestrating:</strong>
+  <%= @review_rating.bestRating %>
+</p>
+
+<p>
+  <strong>Worstrating:</strong>
+  <%= @review_rating.worstRating %>
+</p>
+
+<p>
+  <strong>Alternatename:</strong>
+  <%= @review_rating.alternateName %>
+</p>
+
+<%= link_to 'Edit', edit_review_rating_path(@review_rating) %> |
+<%= link_to 'Back', review_ratings_path %>

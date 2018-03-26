@@ -1,0 +1,50 @@
+<%= form_with(model: claim_review, local: true) do |form| %>
+  <% if claim_review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(claim_review.errors.count, "error") %> prohibited this claim_review from being saved:</h2>
+
+      <ul>
+      <% claim_review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :datePublished %>
+    <%= form.date_select :datePublished, id: :claim_review_datePublished %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url, id: :claim_review_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :item_reviewed_id %>
+    <%= form.collection_select :item_reviewed_id, ItemReviewed.order(:url),:id,:url, include_blank: false %>
+    <%= link_to 'New Item', '/item_revieweds/new' %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Claim Made in the Item' %>
+    <%= form.text_field :claimReviewed, id: :claim_review_claimReviewed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author_id %>
+    <%= form.collection_select :author_id, Author.order(:name),:id,:name, include_blank: false %>
+    <%= link_to 'New Author', '/authors/new' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :review_rating_id %>
+    <%= form.collection_select :review_rating_id, ReviewRating.order(:ratingValue),:id,:alternateName, include_blank: false %>
+    <%= link_to 'New Rating', '/review_ratings/new' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
