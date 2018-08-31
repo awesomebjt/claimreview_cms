@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 # Use rspec for testing
 gem 'rspec'
+gem 'rspec-rails'
 # Use devise for auth
 gem 'devise'
 
