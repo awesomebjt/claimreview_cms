@@ -6,24 +6,52 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style type="text/css">
+			/* Min+ plugin*/
+			message {
+				display: block;
+				padding: 2em;
+				background: #def;
+				border-left: 5px solid #44e;
+			}
+
+			.warning {
+				border-color: #e44;
+				background: #fdd;
+			}
+
+			.great {
+				border-color: #2d2;
+				background: #dfd;
+			}
+		</style>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-
+    <nav class="nav" tabindex="-1" onclick="this.focus()">
+      <div class="container">
+        <a class="pagename current" href="/">ClaimReview CMS</a>
     <% if current_user %>
-      <%= link_to "Log Out", destroy_user_session_path, method: :delete %> |
       <%= current_user.email %>
       <% if current_user.editor %>
         <strong> [Editor]</strong>
       <% end %>
+      <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
     <% else %>
-      <%= link_to "Log In", new_user_session_path %> |
+      <%= link_to "Log In", new_user_session_path %>
       <%= link_to('Register', new_user_registration_path)  %>
     <% end %>
-    <hr/>
+      </div>
+    </nav>
+    <div class="container">
+    <% if notice %>
+      <message class="msg"><%= notice %></message>
+    <% end %>
+    <% if alert %>
+      <message class="warning"><%= alert %></message>
+    <% end %>
     <%= yield %>
+  </div>
   </body>
 </html>
